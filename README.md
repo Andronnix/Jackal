@@ -5,4 +5,4 @@ Jackal
 http://stackoverflow.com/questions/19892232/how-to-connect-visual-studio-2012-with-git-github/19893242
 
 Графическая библиотека
-http://sharpdx.org/
+http://www.opentk.com/
