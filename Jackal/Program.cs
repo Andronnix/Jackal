@@ -16,7 +16,6 @@ namespace Jackal
         {
             using (var program = new Jackal())
                 program.Run();
-
         }
     }
 }
