@@ -23,5 +23,10 @@ namespace Jackal
 
             renderer = gameRenderer;
         }
+
+        public void Update()
+        {
+
+        }
     }    
 }
