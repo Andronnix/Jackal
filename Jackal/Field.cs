@@ -101,8 +101,8 @@ namespace Jackal
     class RandomGettingPull<T> : IEnumerable<T>
     {
         private List<T> storage = new List<T>();
-        private Random r = new Random();
-        
+        private Random r = new Random();       
+
         /* Adds itemto the list */
         public void Add(T item)
         {
@@ -113,7 +113,9 @@ namespace Jackal
         public T GetRandom()
         {
             int n = r.Next(storage.Count);
-            return storage.ElementAt(n);
+            T result = storage.ElementAt(n);
+            storage.RemoveAt(n);
+            return result;
         }
 
         /* Returns items number in the list */
