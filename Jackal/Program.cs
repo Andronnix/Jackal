@@ -14,8 +14,7 @@ namespace Jackal
         [STAThread]
         static void Main()
         {
-            using (var program = new Jackal())
-                program.Run();
+            var program = new Brain();
         }
     }
 }

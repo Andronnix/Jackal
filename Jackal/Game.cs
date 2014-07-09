@@ -8,7 +8,7 @@ namespace Jackal
 {
     class Game
     {
-        public const int[] PlayerColor = { 0, 1, 2, 3 };
+        public readonly int[] PlayerColor = { 0, 1, 2, 3 };
         private Player[] players;
         public Field field;
 
@@ -16,6 +16,7 @@ namespace Jackal
         {
             field = new Field();
 
+            players = new Player[playersNumber];
             for (int i = 0; i < playersNumber; i++)
                 players[i] = new Player(PlayerColor[i % PlayerColor.Length], new HumanStategy());
 

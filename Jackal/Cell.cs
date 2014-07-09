@@ -6,12 +6,12 @@ using System.Collections;
 
 namespace Jackal
 {
-    class Cell : IDrawable
+    class Cell
     {
-        public static const int CELL_ROTATION_UP    = 0;
-        public static const int CELL_ROTATION_RIGHT = 1;
-        public static const int CELL_ROTATION_DOWN  = 2;
-        public static const int CELL_ROTATION_LEFT  = 3;
+        public static int CELL_ROTATION_UP    = 0;
+        public static int CELL_ROTATION_RIGHT = 1;
+        public static int CELL_ROTATION_DOWN  = 2;
+        public static int CELL_ROTATION_LEFT  = 3;
         public static int GetRandomRotation() {
             return (new Random()).Next(4);
         }
@@ -29,7 +29,7 @@ namespace Jackal
         }
     }
 
-    enum CellType {
+    public enum CellType {
         /* Landscape */
         Empty,
         Sea,

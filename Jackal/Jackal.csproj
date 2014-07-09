@@ -48,11 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Brain.cs" />
     <Compile Include="Cell.cs" />
+    <Compile Include="Coin.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="HumanStategy.cs" />
     <Compile Include="IDrawable.cs" />
+    <Compile Include="AbstractGameRenderer.cs" />
+    <Compile Include="IPlayerStrategy.cs" />
     <Compile Include="Jackal.cs" />
+    <Compile Include="OpenGLGameRenderer.cs" />
+    <Compile Include="Pirate.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ship.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

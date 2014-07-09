@@ -20,16 +20,16 @@ namespace Jackal
         /// <summary>
         /// Reneder game
         /// </summary>
-        abstract void Render();
+        abstract public void Render();
 
         /// <summary>
         /// Select object at screen position, deselect previous, if selected
         /// </summary>
-        abstract void SelectAt(Point p);
+        abstract public void SelectAt(Point p);
 
         /// <summary>
         /// Deselect last object, if selected
         /// </summary>
-        abstract void Deselect();
+        abstract public void Deselect();
     }
 }
