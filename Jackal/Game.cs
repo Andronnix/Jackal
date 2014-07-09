@@ -9,23 +9,15 @@ namespace Jackal
     class Game
     {
         public const int[] PlayerColor = { 0, 1, 2, 3 };
-        public const int FIELD_SIZE = 11;
-        private IGameRenderer renderer;
         private Player[] players;
-        private Field field;
+        public Field field;
 
-        public Game(int playersNumber, IGameRenderer gameRenderer)
+        public Game(int playersNumber)
         {
-            field = new Field(FIELD_SIZE);
+            field = new Field();
 
             for (int i = 0; i < playersNumber; i++)
                 players[i] = new Player(PlayerColor[i % PlayerColor.Length], new HumanStategy());
-
-            renderer = gameRenderer;
-        }
-
-        public void Update()
-        {
 
         }
     }    

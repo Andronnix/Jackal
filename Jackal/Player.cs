@@ -10,6 +10,7 @@ namespace Jackal
     {
         private Pirate[] pirates;
         private int color;
+
         public Player(int color, IPlayerStrategy strategy)
         {
             this.color = color;

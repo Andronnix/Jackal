@@ -76,7 +76,9 @@ namespace Jackal
         MoneyChest5
     }
 
-    public static class CellTypeCount {
+    public static class CellTypeCount
+    {
+        #region quantity of cells of each type
         private static Dictionary<CellType, int> storage = new Dictionary<CellType, int>
         {
             {CellType.Airplane,           1},
@@ -110,6 +112,7 @@ namespace Jackal
             {CellType.Trap,               3},
             {CellType.Troll,              1}
         };
+        #endregion
 
         public static IEnumerable<CellType> GetTypes()
         {

@@ -65,7 +65,7 @@ namespace Jackal
             #endregion
 
             #region Randomly generated island
-            RandomGettingPull<CellType> typePool = new RandomGettingPull<CellType>();
+            RandomGettingPool<CellType> typePool = new RandomGettingPool<CellType>();
             foreach(CellType t in CellTypeCount.GetTypes()) {
                 if (t == CellType.Sea || t == CellType.NonSwimmableSea) continue;   //Added manually
                 for (int i = 0; i < CellTypeCount.GetCount(t); i++)
@@ -74,7 +74,7 @@ namespace Jackal
                 }
             }
 
-            RandomGettingPull<Point> positionPool = new RandomGettingPull<Point>();
+            RandomGettingPool<Point> positionPool = new RandomGettingPool<Point>();
             for (int i = 1; i < FIELD_SIZE - 1; i++)
             {
                 for (int j = 1; j < FIELD_SIZE - 1; j++)
@@ -95,21 +95,31 @@ namespace Jackal
 
             #endregion
         }
+        
+
     }
 
-    /* Class describes pull, providing random getting of items*/
-    class RandomGettingPull<T> : IEnumerable<T>
+    /// <summary>
+    /// Class describes pool, providing random getting of items*/
+    /// </summary>
+    /// <typeparam name="T">Item type</typeparam> 
+    class RandomGettingPool<T>
     {
         private List<T> storage = new List<T>();
         private Random r = new Random();       
 
-        /* Adds itemto the list */
+        /// <summary>
+        /// Add item to the pool
+        /// </summary>
+        /// <param name="item">item to add</param>
         public void Add(T item)
         {
             storage.Add(item);
         }
 
-        /* Returns random item from list */
+        /// <summary>
+        /// Returns random item from pool 
+        /// </summary>        
         public T GetRandom()
         {
             int n = r.Next(storage.Count);
@@ -118,13 +128,17 @@ namespace Jackal
             return result;
         }
 
-        /* Returns items number in the list */
+        /// <summary>
+        /// Returns items number in the pool
+        /// </summary>
         public int Count
         {
             get { return storage.Count; }
         }
 
-        /* Returns true, if list is empty, false otherwise */
+        /// <summary>
+        /// Check if pool is empty 
+        /// </summary>
         public bool IsEmpty()
         {
             return storage.Count == 0;
