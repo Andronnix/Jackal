@@ -14,8 +14,8 @@ namespace Jackal
     class OpenGLGameRenderer : AbstractGameRenderer
     {
         Renderer r;
-        public OpenGLGameRenderer(Game g)
-            : base(g)
+        public OpenGLGameRenderer()
+            : base()
         {
             r = new Renderer();
         }
@@ -38,8 +38,7 @@ namespace Jackal
 
         private class Renderer : GameWindow
         {
-            public Renderer()
-                : base()
+            public Renderer() : base()
             {
                 this.Run();
             }
@@ -90,6 +89,11 @@ namespace Jackal
                 base.OnUpdateFrame(e);
                 Console.WriteLine(String.Format("({0}, {1})", this.Mouse.X, this.Mouse.Y));
             }
+        }
+
+        protected override void initSelf()
+        {
+            throw new NotImplementedException();
         }
     }
 }

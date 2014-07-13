@@ -9,16 +9,27 @@ namespace Jackal
 {
     abstract class AbstractGameRenderer
     {
-        private Game game;
-        private Field gameField;
-        public AbstractGameRenderer(Game g)
+        public event EventHandler Close;
+
+        protected Game game;
+        protected Field gameField;
+        public AbstractGameRenderer() {}
+
+        public void ApplyGame(Game g)
         {
+            Console.Write("base");
             game = g;
             gameField = g.field;
+            initSelf();
         }
 
         /// <summary>
-        /// Reneder game
+        /// This should contain all initialization logic, called after game value is set
+        /// </summary>
+        abstract protected void initSelf();
+
+        /// <summary>
+        /// Render game
         /// </summary>
         abstract public void Render();
 
@@ -31,5 +42,15 @@ namespace Jackal
         /// Deselect last object, if selected
         /// </summary>
         abstract public void Deselect();
+
+        protected virtual void RaiseClose()
+        {
+            EventHandler handler = Close;
+
+            if (handler != null)
+            {
+                handler(this, null);
+            }
+        }
     }
 }

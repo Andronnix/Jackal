@@ -11,10 +11,10 @@ namespace Jackal
         /// <summary>
         /// Defines the entry point of the application.
         /// </summary>
-        [STAThread]
+        [MTAThread]
         static void Main()
         {
-            var program = new Brain();
+            var program = new Brain(new WinFormRenderer());
         }
     }
 }

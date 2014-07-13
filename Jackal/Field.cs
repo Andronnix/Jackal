@@ -13,10 +13,16 @@ namespace Jackal
         private const int FIELD_SIZE = 11 + 2;
         private Cell[,] cells;
         private List<Pirate> pirates;
+
+        public Cell[,] Cells
+        {
+            get { return cells; }
+        }
         
         public Field()
         {
             cells = new Cell[FIELD_SIZE, FIELD_SIZE];
+            generate();
         }
 
         private void generate()
@@ -79,7 +85,7 @@ namespace Jackal
             {
                 for (int j = 1; j < FIELD_SIZE - 1; j++)
                 {
-                    if (i == j && (i == 1 || i == FIELD_SIZE - 1)) continue;        //Skip corners, already added
+                    if (cells[i, j] != null) continue; //already added
                     positionPool.Add(new Point(i, j));
                 }
             }
@@ -96,7 +102,6 @@ namespace Jackal
             #endregion
         }
         
-
     }
 
     /// <summary>
